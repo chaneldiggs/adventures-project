@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
       <th>Name</th>
       <th>Cost</th>
       <th>Duration</th>
@@ -16,7 +15,6 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= activity.id %></td>
         <td><%= activity.name %></td>
         <td><%= number_to_currency activity.cost %></td>
         <td><%= number_with_precision(activity.duration, precision:2) %> hours</td>
@@ -28,6 +26,15 @@
   </tbody>
 </table>
 
+<%= link_to 'New Activity', new_activity_path %>
 <br>
 
-<%= link_to 'New Activity', new_activity_path %>
+<p>
+  <% @images.each do |key, value| %>
+    <%= image_tag key, alt: 'value', class: "activitiy-pics" %>
+  <% end %>
+</p>
+
+
+
+
